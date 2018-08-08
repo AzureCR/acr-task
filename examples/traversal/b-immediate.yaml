@@ -1,0 +1,9 @@
+# In this example, all three commands will run in parallel. '-' stands for immediate execution.
+- run: bash ls
+  when: ['-']
+
+- run: bash ls
+  when: ['-']
+
+- run: bash ls
+  when: ['-']

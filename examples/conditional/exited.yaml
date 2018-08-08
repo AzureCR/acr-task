@@ -1,0 +1,16 @@
+# Conditionally trigger deployments, rollbacks, notifications, etc. based on success/failure.
+# TODO: exitedWith, exitedWithout, retry, and retryDelay are not currently supported.
+steps:
+  - run: deploy
+    id: 'deploy'
+    retry: 3 # retry this step 3 times if it fails
+    retryDelay: 10 # wait 10 seconds after a failure to retry
+
+  - run: notify
+    when: ['deploy']
+    exitedWith: [0] # these are exit codes
+
+  - run: rollback
+    when: ['deploy']
+    # exitedWith: [1,2,3,4]
+    exitedWithout: [0]

@@ -1,0 +1,12 @@
+steps:
+{{ if Values.environment == 'prod' }}
+  - run: prod setup
+{{ else if Values.environment == 'staging' }}
+  - run: staging setup
+{{ else }}
+  - run: default setup
+{{ end }}
+
+  - run: build -t FancyThing:{{.Values.environment}}-{{.Values.version}} .
+
+push: ['FancyThing:{{.Values.environment}}-{{.Values.version}}']
