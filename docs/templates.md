@@ -9,7 +9,7 @@ Individual builds and tasks both support templating. There are two types of vari
 
 ## Build variables
 
-The following variables can be accessed using `{{ .Build.VariableName }}`, where `VariableName` equals one of the following:
+The following variables can be accessed using `{{ .Run.VariableName }}`, where `VariableName` equals one of the following:
 
 - ID
 - Commit
@@ -52,7 +52,7 @@ Successfully tagged acr-builder:demo
 Templating in `build` works the same as `exec`, except that you don't have to provide a `--steps` file.
 
 ```sh
-$ acb build https://github.com/Azure/acr-builder.git -f Dockerfile -t "acr-builder:{{.Build.ID}}" --id demo
+$ acb build https://github.com/Azure/acr-builder.git -f Dockerfile -t "acr-builder:{{.Run.ID}}" --id demo
 
 ...
 
