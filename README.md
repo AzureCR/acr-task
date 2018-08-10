@@ -7,7 +7,7 @@ This CLI requests the Azure Container Registry to run the task using the Azure C
 ```sh
 az acr task run -f abc.yaml
 ```
+
 ![Img](docs/images/task.png)
 
 * For documentation around creating a task config, review the documentation [here](docs/README.md).
-
