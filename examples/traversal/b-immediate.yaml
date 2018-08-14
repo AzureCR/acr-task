@@ -1,9 +1,12 @@
 # In this example, all three commands will run in parallel. '-' stands for immediate execution.
-- run: bash ls
-  when: ['-']
+version: v1.0.0
 
-- run: bash ls
-  when: ['-']
+steps:
+  - cmd: bash ls
+    when: ['-']
 
-- run: bash ls
-  when: ['-']
+  - cmd: bash ls
+    when: ['-']
+
+  - cmd: bash ls
+    when: ['-']

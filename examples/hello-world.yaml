@@ -1,2 +1,4 @@
+version: v1.0.0
+
 steps: 
-    - run: hello-world
+    - cmd: hello-world
