@@ -1,9 +1,12 @@
 # In this example, the first command will execute and the second/third commands will run in parallel.
-- run: bash ls
-  id: 'A'
+version: v1.0.0
 
-- run: bash ls
-  when: ['A']
+steps:
+  - id: 'A'
+    cmd: bash ls
 
-- run: bash ls
-  when: ['A']
+  - cmd: bash ls
+    when: ['A']
+
+  - cmd: bash ls
+    when: ['A']

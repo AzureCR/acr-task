@@ -1,5 +1,7 @@
 # By default, all steps execute sequentially.
+version: v1.0.0
+
 steps:
-  - run: bash ./pre.sh
-  - run: build -f Dockerfile .
-  - run: bash ./post.sh
+  - cmd: bash ./pre.sh
+  - cmd: build -f Dockerfile .
+  - cmd: bash ./post.sh

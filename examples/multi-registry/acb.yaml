@@ -1,3 +1,5 @@
+version: v1.0.0
+
 steps:
   - cmd: docker login {{.Values.regOne}} -u {{.Values.regOneUser}} -p {{.Values.regOnePw}}
   - cmd: docker pull {{.Values.regOne}}/hello-world

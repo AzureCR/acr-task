@@ -1,12 +1,14 @@
+version: v1.0.0
+
 steps:
 {{ if Values.environment == 'prod' }}
-  - run: prod setup
+  - cmd: prod setup
 {{ else if Values.environment == 'staging' }}
-  - run: staging setup
+  - cmd: staging setup
 {{ else }}
-  - run: default setup
+  - cmd: default setup
 {{ end }}
 
-  - run: build -t FancyThing:{{.Values.environment}}-{{.Values.version}} .
+  - cmd: build -t FancyThing:{{.Values.environment}}-{{.Values.version}} .
 
 push: ['FancyThing:{{.Values.environment}}-{{.Values.version}}']
