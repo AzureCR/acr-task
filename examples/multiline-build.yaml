@@ -1,0 +1,7 @@
+# Using the "folding style" in YAML will create spaces between each line break
+steps:
+  - id: my-WebSite
+    build: >
+      -t {{.Run.Registry}}/scratch:latest
+      -t {{.Run.Registry}}/scratch:{{.Run.ID}}
+      .
