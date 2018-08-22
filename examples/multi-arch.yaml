@@ -18,9 +18,5 @@ steps:
     {{.Run.Registry}}/multi-arch:latest
     {{.Run.Registry}}/multi-arch:arm32
     {{.Run.Registry}}/multi-arch:amd64
-- cmd: >
-    docker manifest annotate 
-    {{.Run.Registry}}/multi-arch:latest 
-    {{.Run.Registry}}/multi-arch:arm32 --os linux --arch arm
 - cmd: docker manifest push --purge {{.Run.Registry}}/multi-arch:latest
 - cmd: docker manifest inspect {{.Run.Registry}}/multi-arch:latest
