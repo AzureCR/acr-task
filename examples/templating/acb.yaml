@@ -10,5 +10,4 @@ steps:
 {{ end }}
 
   - cmd: build -t FancyThing:{{.Values.environment}}-{{.Values.version}} .
-
-push: ['FancyThing:{{.Values.environment}}-{{.Values.version}}']
+  - push: ['FancyThing:{{.Values.environment}}-{{.Values.version}}']
