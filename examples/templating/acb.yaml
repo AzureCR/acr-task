@@ -1,9 +1,9 @@
 version: v1.0.0
 
 steps:
-{{ if Values.environment == 'prod' }}
+{{ if eq .Values.environment "prod" }}
   - cmd: prod setup
-{{ else if Values.environment == 'staging' }}
+{{ else if eq .Values.environment "staging" }}
   - cmd: staging setup
 {{ else }}
   - cmd: default setup
