@@ -11,8 +11,9 @@ steps:
     RUN uname -m" > dockerfile.amd64'
 - build: -t {{.Run.Registry}}/multi-arch:arm32 -f dockerfile.arm32 . 
 - build: -t {{.Run.Registry}}/multi-arch:amd64 -f dockerfile.amd64 . 
-- cmd: docker push {{.Run.Registry}}/multi-arch:amd64
-- cmd: docker push {{.Run.Registry}}/multi-arch:arm32
+- push: 
+    - {{.Run.Registry}}/multi-arch:amd64
+    - {{.Run.Registry}}/multi-arch:arm32
 - cmd: >
     docker manifest create
     {{.Run.Registry}}/multi-arch:latest
