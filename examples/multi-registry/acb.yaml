@@ -5,4 +5,5 @@ steps:
   - cmd: docker pull {{.Values.regOne}}/hello-world
   - cmd: docker login {{.Values.regTwo}} -u {{.Values.regTwoUser}} -p {{.Values.regTwoPw}}
   - cmd: docker tag {{.Values.regOne}}/hello-world {{.Values.regTwo}}/hello-world:crossover
-  - cmd: docker push {{.Values.regTwo}}/hello-world:crossover
+  - push: 
+    - {{.Values.regTwo}}/hello-world:crossover
