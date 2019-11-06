@@ -1,0 +1,8 @@
+version: v1.1.0
+steps:
+  - id: az-login
+    cmd: >
+      az login --identity > /dev/null
+  - id: acr-list
+    cmd: >
+      az acr list -o jsonc
